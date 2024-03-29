@@ -75,9 +75,10 @@ function PaddyDetector() {
   };
 
   return (
-    <div className="file-upload-container">
+    <div className="headermain">
+      <Header/>
       <div className="background-image"></div>
-      <div className="content">
+      <div className="file-upload-container">
         <h2>Upload a File</h2>
         <input
           id="file-input"
