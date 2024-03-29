@@ -1,0 +1,40 @@
+/* header.css */
+
+.headerapp {
+    background-image: linear-gradient( rgb(64, 224, 208), black);
+    color: #fff;
+    /* width: 100%; */
+    margin-top: 0;
+    margin-right: 0;
+    padding: 20px;
+  }
+  
+  .nav-items {
+    display: flex;
+    margin-left: 990px;
+  }
+  
+  
+  .nav-link {
+    background-color: rgb(149, 149, 152); /* Set background color for the links */
+    color: rgb(23, 22, 22); /* Set text color for the links */
+    padding: 10px 15px;
+    text-decoration: none;
+  }
+  
+  /* Adjust other styles as needed */
+  
+  .nav-space {
+    margin-right: 20px; /* Adjust the value to your desired spacing */
+  }
+  
+  .nav-space1 {
+    margin-left: 500px;
+  }
+  
+  .header-content {
+    margin-top: 20px;
+  }
+  
+  
+  
