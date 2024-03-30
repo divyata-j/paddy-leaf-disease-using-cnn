@@ -36,21 +36,27 @@ def predict():
 
         prediction = model.predict(img_array)
         predicted_class = np.argmax(prediction)
+
+        confidence = np.max(prediction)
+        confidence_threshold = 1.0
+
+        if confidence <= confidence_threshold:
+            return jsonify({"predicted_class": "Invalid image", "additional_info": "The uploaded image does not appear to be a paddy leaf."})
         
         label_names = ['Brown spot', 'Healthy leaf', 'Leaf Blast', 'Leaf Blight', 'Leaf smut']
         predicted_class_label = label_names[predicted_class]
 
         additional_info = ""
         if predicted_class_label == 'Brown spot':
-            additional_info = "pesticide for brown spot"
+            additional_info = "Fungicide: Propiconazole \nApplication Quantity: 100-200 ml per 100 liters of water \nApplication Interval: Every 10-14 days during the disease outbreak period"
         elif predicted_class_label == 'Healthy leaf':
-            additional_info = ""
+            additional_info = "No fungicide required"
         elif predicted_class_label == 'Leaf Blast':
-            additional_info = "pesticide for Leaf Blast"
+            additional_info = "Fungicide: Azoxystrobin \nApplication Quantity: 200-300 ml per 100 liters of water \nApplication Interval: Every 7-10 days during the disease outbreak period"
         elif predicted_class_label == 'Leaf Blight':
-            additional_info = "pesticide for Leaf Blight"
+            additional_info = "Fungicide: Tricyclazole \nApplication Quantity: 150-250 grams per acre \n Application Interval: Every 10-14 days during the disease outbreak period"
         elif predicted_class_label == 'Leaf smut':
-            additional_info = "pesticide for Leaf smut"
+            additional_info = "Fungicide: Carbendazim \nApplication Quantity: 100-200 grams per 100 liters of water \nApplication Interval: Every 10-14 days during the disease outbreak period"
     
         result = {
             "predicted_class": predicted_class_label,

@@ -34,6 +34,7 @@ function PaddyDetector() {
   const [previewURL, setPreviewURL] = useState(null);
   const [prediction, setPrediction] = useState(null);
   const [additionalInfo, setAdditionalInfo] = useState(null);
+  const [error, setError] = useState(null);
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -61,6 +62,7 @@ function PaddyDetector() {
     console.log("Prediction response:", predictResponse.data); 
     setPrediction(predictResponse.data.predicted_class);
     setAdditionalInfo(predictResponse.data.additional_info);
+    setError(null);
   } catch (error) {
     console.error('Error:', error);
   }
@@ -72,6 +74,7 @@ function PaddyDetector() {
     document.getElementById('file-input').value = '';
     setPrediction(null);
     setAdditionalInfo(null);
+    setError(null);
   };
 
   return (
@@ -92,11 +95,12 @@ function PaddyDetector() {
             <img src={previewURL} alt="Selected" style={{ maxWidth: '100%', maxHeight: '200px' }} />
           </div>
         )}
+        {error && <p className="error-message">{error}</p>}
         {selectedFile && (
           <div className="button-container">
             <button className="submit-button" onClick={handleSubmit}>Submit</button>
             {prediction && <p>Prediction: {prediction}</p>}
-            {additionalInfo && <p>Treatment {additionalInfo}</p>}
+            {additionalInfo && <p>Treatment: {additionalInfo}</p>}
             <button className="reset-button" onClick={handleReset}>Reset</button>
           </div>
         )}

@@ -15,7 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./p8.png); /* Set the path to your background image */
+    background-image: url(./p8.png); 
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -109,5 +109,9 @@
   border-radius: 4px;
 }
 
-
-  
+.error-message {
+  color: red; /* Set text color to red */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make text bold */
+  margin-top: 10px; /* Add some top margin for spacing */
+}
