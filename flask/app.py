@@ -38,7 +38,7 @@ def predict():
         predicted_class = np.argmax(prediction)
 
         confidence = np.max(prediction)
-        confidence_threshold = 1.0
+        confidence_threshold = 0.5
 
         if confidence <= confidence_threshold:
             return jsonify({"predicted_class": "Invalid image", "additional_info": "The uploaded image does not appear to be a paddy leaf."})

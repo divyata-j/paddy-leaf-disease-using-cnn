@@ -6,22 +6,19 @@ import { useNavigate,Link} from 'react-router-dom';
 function Header() {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    navigate('/');
-  };
+  
 
   return (
     <div className="headerapp">
       <div className="header-content">
         <nav className="nav">
           <div className="nav-items">
-            <Link to="/home" className="nav-link">Home</Link>
+            
+            <Link to="/" className="nav-link">Home</Link>
             <span className="nav-space"></span>
             <Link to="/about" className="nav-link">About</Link>
             <span className="nav-space"></span>
-            <Link to="/profile" className="nav-link">Profile</Link>
-            <span className="nav-space"></span>
-            <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
+            
           </div>
         </nav>
       </div>
@@ -80,7 +77,15 @@ function PaddyDetector() {
   return (
     <div className="headermain">
       <Header/>
-      <div className="background-image"></div>
+      
+      
+      <div className="background-image">
+      <div className='pred-container'>
+            {prediction && <p>Prediction: {prediction}</p>}
+            {additionalInfo && <p>Treatment {additionalInfo}</p>}
+          </div>
+      </div>
+      
       <div className="file-upload-container">
         <h2>Upload a File</h2>
         <input
@@ -89,22 +94,26 @@ function PaddyDetector() {
           onChange={handleFileChange}
           accept="image/*" 
         />
+        
         {previewURL && (
           <div>
             <h3>Selected Image:</h3>
             <img src={previewURL} alt="Selected" style={{ maxWidth: '100%', maxHeight: '200px' }} />
           </div>
+          
         )}
         {error && <p className="error-message">{error}</p>}
         {selectedFile && (
           <div className="button-container">
             <button className="submit-button" onClick={handleSubmit}>Submit</button>
-            {prediction && <p>Prediction: {prediction}</p>}
-            {additionalInfo && <p>Treatment: {additionalInfo}</p>}
+            {/* {prediction && <p>Prediction: {prediction}</p>}
+            {additionalInfo && <p>Treatment: {additionalInfo}</p>} */}
             <button className="reset-button" onClick={handleReset}>Reset</button>
           </div>
+          
         )}
       </div>
+      
     </div>
   );
 }

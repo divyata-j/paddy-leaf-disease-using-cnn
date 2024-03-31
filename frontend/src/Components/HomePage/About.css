@@ -1,6 +1,6 @@
 /* About.css */
 body{
-    background-image: linear-gradient(to right, #1a1a1a, #e2d9d2);
+    background-image: linear-gradient(to left, #198488,#40a2b6);
       background-size: cover;
   }
   .about-container {
@@ -12,6 +12,7 @@ body{
     .about-container h1 {
       font-size: 24px;
       margin-bottom: 20px;
+      
     }
     
     .about-container p {
@@ -26,10 +27,23 @@ body{
       text-decoration: underline;
     }
     .t-color{
-      color:white;
+      color:rgb(8, 8, 8);
       padding-left: 30px;
     }
     .about-container a:hover {
       text-decoration: none; /* Remove underline on hover */
     }
-    
+    .container-about {
+      width: 100%; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
+   /* Center the container horizontally */
+   margin-left: 120px;
+   margin-top: 120px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #0a4d682f;
+    }
+    .nav-items{
+      margin-left: 1200px;
+    }
