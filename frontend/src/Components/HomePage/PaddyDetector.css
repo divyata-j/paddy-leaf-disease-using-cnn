@@ -55,10 +55,10 @@
 .file-upload-container {
   width: 100%; 
   max-width: 300px; 
-   margin-left: 120px;
-   margin-top: 10px;
+  margin-left: 30px;
+  margin-top: 50px;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1.6px solid #181717;
   border-radius: 5px;
   background-color: #ece7e7;
 }
@@ -107,9 +107,9 @@
 .pred-container{
   width: 100%; 
   max-width: 300px; 
-   margin-left: 800px;
-   margin-right: 80px;
-   margin-top: 150px;
+  margin-left: 800px;
+  margin-right: 80px;
+  margin-top: 150px;
   padding: 0px;
   border: 1px solid #ece7e7;
   border-radius: 5px;
@@ -171,4 +171,35 @@
   height: 50px; 
   
 }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+.loader-spinner {
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #3498db; 
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
 

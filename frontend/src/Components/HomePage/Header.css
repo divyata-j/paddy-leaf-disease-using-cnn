@@ -1,35 +1,59 @@
-/* header.css */
+@font-face {
+  font-family: 'Kanit';
+  src: url('../fonts/Kanit-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Peralta';
+  src: url('../fonts/hYkJPu0-RP_9d3kRKxcrrw.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../fonts/Philosopher-latin.woff2') format('woff2');
+}
 
 .headerapp {
-    background-image: linear-gradient( rgb(64, 224, 208), black);
-    color: #fff;
+    background-image: linear-gradient( #256895,rgb(7, 26, 86));
+    /* color: #fff; */
     /* width: 100%; */
     margin-top: 0;
     margin-right: 0;
     padding: 20px;
-  }
-  
-  .nav-items {
+    align-items: center; 
     display: flex;
-    margin-left: 1250px;
+    min-height: 65px 
   }
   
+  .nav {
+    /* background-color: #125941a9; */
+    display: flex;
+    flex-grow: 1;
+    /* width: 100%;  */
+    justify-content: flex-end;
+  }
+
+ .header-title {
+  font-family: "Kanit",serif;
+  font-size: 2.5rem;  
+  color: white;  
+  text-align: left; 
+  margin: 0;  
+  padding: 10px 15px;  
+  flex: 1;
+  line-height: 25px; 
+}
   
   .nav-link {
-    background-color: rgb(149, 149, 152); /* Set background color for the links */
+    background-color: rgb(214, 214, 214); /* Set background color for the links */
     color: rgb(23, 22, 22); /* Set text color for the links */
+    font-weight: bold;
     padding: 10px 15px;
     text-decoration: none;
+    margin-left: 10px;    
   }
-  
-  /* Adjust other styles as needed */
   
   .nav-space {
     margin-right: 20px; /* Adjust the value to your desired spacing */
-  }
-  
-  .nav-space1 {
-    margin-left: 500px;
   }
   
   .header-content {

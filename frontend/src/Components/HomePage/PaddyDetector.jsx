@@ -10,19 +10,19 @@ function Header() {
 
   return (
     <div className="headerapp">
-      <div className="header-content">
+      {/* <div className="header-content"> */}
         <nav className="nav">
-          <div className="nav-items">
-            
+          <h4 className='header-title'>PaddyCare</h4>
+          {/* <div className="nav-items"> */}
             <Link to="/" className="nav-link">Home</Link>
             <span className="nav-space"></span>
             <Link to="/about" className="nav-link">About</Link>
-            <span className="nav-space"></span>
+            {/* <span className="nav-space"></span> */}
             
-          </div>
+          {/* </div> */}
         </nav>
       </div>
-    </div>
+    // </div>
   );
 }
 
@@ -36,6 +36,7 @@ function PaddyDetector() {
   const [alertMessage, setAlertMessage] = useState('');
   const [imageSrc,setImageSrc] = useState(null)
   const [showPrediction, setShowPrediction] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   
   const handleFileChange = (event) => {
@@ -56,6 +57,7 @@ function PaddyDetector() {
     
     const formdata=new FormData()
     formdata.append('image',selectedFile)
+    setIsLoading(true);
     try{
       // await axios.post(`http://localhost:9000/upload`,formdata)
       const predictResponse= await axios.post(`http://localhost:5000/detect-leaf`,formdata, {
@@ -71,6 +73,8 @@ function PaddyDetector() {
       handleError('Oops, not a paddy leaf image.', oops); 
       setPrediction(null);
       setAdditionalInfo(null);
+     } finally{
+       setIsLoading(false);
      }
      setShowPrediction(true);
   };
@@ -82,6 +86,7 @@ function PaddyDetector() {
     setPrediction(null);
     setAdditionalInfo(null);
     setShowPrediction(false);
+    
   };
 
   const handleError = (errorMessage, imageSrc=oops) => {  
@@ -94,11 +99,15 @@ function PaddyDetector() {
   return (
     <div className="headermain">
       <Header/>
-      
+      {isLoading && (
+              <div className="loader"> Loading...
+                <div className="loader-spinner"></div>
+              </div>
+            )}
       <div className="background-image">
       {showPrediction && ( 
       <div className='pred-container'>
-            {prediction && <p>Classification: {prediction}</p>}
+            {prediction && !isLoading && <p>Classification: {prediction}</p>}
             {additionalInfo && (
             <p>
               Treatment: <br/>
@@ -112,7 +121,7 @@ function PaddyDetector() {
       </div>
       
       <div className="file-upload-container">
-        <h2>Upload a File</h2>
+        <h2>Upload an Image</h2>
         <input
           id="file-input"
           type="file"

@@ -36,17 +36,16 @@ function About() {
       <h1 className="t-color" >About</h1>
       
       <p className="t-color">
-        Welcome to the "Recognition and Classification of Paddy Leaf Disease" project! This project aims to
-        develop a system that can accurately recognize and classify diseases in paddy leaves using machine learning
-        and image processing techniques.
+        Welcome to the "Recognition and Classification of Paddy Leaf Disease" project! Our team of passionate engineers 
+        have developed a system to empower farmers with the tools they need to protect their crops.
       </p>
       <p className="t-color">
-        The system will analyze images of paddy leaves to identify various types of diseases such as blast, sheath
-        blight, and brown spot. It will provide insights to farmers, helping them take appropriate measures to
-        protect their crops and improve yield.
+      This system leverages machine learning and image processing to analyze paddy leaf images and identify various diseases
+      like blast, sheath blight, and brown spot. By detecting diseases early, farmers can take timely action, reduce treatment 
+      costs, and ultimately increase crop yield.
       </p>
       <p className="t-color">
-        Our team is dedicated to creating an efficient and reliable solution that contributes to the advancement
+        Our team is dedicated to create an efficient and reliable solution that contributes to the advancement
         of agriculture and supports farmers in their efforts to ensure food security.
       </p>
       </div>

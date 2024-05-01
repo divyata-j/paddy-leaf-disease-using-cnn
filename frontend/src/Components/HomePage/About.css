@@ -1,7 +1,7 @@
 /* About.css */
 body{
-    background-image: linear-gradient(to left, #198488,#40a2b6);
-      background-size: cover;
+    background-color: #4b98d7be;
+    background-size: cover;
   }
   .about-container {
       max-width: 800px; /* Adjust as needed */
